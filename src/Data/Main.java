@@ -127,6 +127,9 @@ public class Main extends javax.swing.JFrame {
 
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
        DecimalFormat df = new DecimalFormat("#.####");
+        ////here the post code which we get it from the user
+        //here the post code which we get it from the area
+
         double a = Double.parseDouble(PostCode.getText());
         double y = Double.parseDouble(Area.getText());
         try {
@@ -134,6 +137,8 @@ public class Main extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //here we do string no then we will supose condition in case it was true
+        //it change to yes
         String check = "no";
         for (int i = 0; i < inputList.size(); i++) {
             if (inputList.get(i).address == a) {
@@ -144,6 +149,11 @@ public class Main extends javax.swing.JFrame {
                 check = "no";
             }
         }
+//in case that it is yes we will transfer the value of a in array list ch
+        
+        //this loop used to ckeak in the data in case we have the post code equal to the user input
+    //we transfer this in new array to use it later to calculate the sloop and the coffecient.
+    //this array we create it to store the A(sloop) and B(cofficent)the resense is move them to the user interface   
 
         if (check.equals("yes")) {
             ArrayList<Property> ch = new ArrayList();
